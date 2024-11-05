@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/kkddhh/Desktop/university/GDSC/go_practice/week3/factorial'
+relocations:     []
+...
