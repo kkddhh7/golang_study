@@ -1,9 +1,10 @@
 name: golang-ci
 on:
   pull_request:
-    path:
+    paths:
       - "**.go"
       - .github/workflows/golangci.yml
+
 jobs:
   golangci-lint:
     name: golangci-lint
@@ -18,5 +19,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           golangci_lint_flags: "--config=../../.golangci.yml ./..."
           fail_on_error: true
-          reporter: "github-pr-review" 
-          workdir: "week5" 
+          reporter: "github-pr-review"
+          workdir: "week5"
