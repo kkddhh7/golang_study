@@ -10,34 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/chekout@v3
+        uses: actions/checkout@v3
 
       - name: Run golangci-lint with reviewdog
         uses: reviewdog/action-golangci-lint@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          golangci_lint_flages: "--config=../../.golangci.yml ./..."
+          golangci_lint_flags: "--config=../../.golangci.yml ./..."
           fail_on_error: true
           reporter: "github-pr-review" 
           workdir: "week5"
-linters-settings:
-  govet:
-    check-shadowing: false
-  gocyclo:
-    min-complexity: 30
-  misspell:
-    locale: US
-
-linters:
-  disable-all: true
-  enable:
-    - goimports
-    - unnused
-    - errcheck
-    - gocognit
-    - gocyclo
-    - gofmt
-    - govet
-    - misspell
-    - staticcheck
-    - whitespace

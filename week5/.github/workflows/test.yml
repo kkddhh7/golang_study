@@ -15,3 +15,4 @@ on:
       - run: cd ${{ github.workspace}}/week5 && go test ./... -coverprofile=coverage.out
       - name: report coverage
         uses: k1LoW/octocov-action@v0
+        
